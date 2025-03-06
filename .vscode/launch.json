@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/WpfApp/bin/Debug/net9.0-windows/WpfApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/WpfApp",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "logging": {
+                "engineLogging": false,
+                "trace": false,
+                "programOutput": true
+            },
+            "internalConsoleOptions": "openOnSessionStart",
+            "framework": "net9.0" // Update to match the installed framework version
+        }
+    ]
+}

@@ -18,6 +18,7 @@ namespace XmlNotepad
         private bool _csvImport;
         private bool _xsltView;
         private bool _enabled;
+        private string ApiKey = "your-api-key-here"; // Replace with the actual API key
 
         public AppAnalytics(string clientId, bool enabled)
         {
