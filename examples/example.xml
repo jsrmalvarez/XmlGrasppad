@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book id="1">
+        <title>Introduction to XML</title>
+        <author>John Doe</author>
+        <publisher>XML Press</publisher>
+        <year>2021</year>
+        <genre>Technology</genre>
+        <price>29.99</price>
+        <description>
+            This book provides an introduction to XML and its applications.
+        </description>
+    </book>
+    <book id="2">
+        <title>Advanced XML Techniques</title>
+        <author>Jane Smith</author>
+        <publisher>XML Press</publisher>
+        <year>2022</year>
+        <genre>Technology</genre>
+        <price>39.99</price>
+        <description>
+            This book covers advanced techniques for working with XML.
+        </description>
+    </book>
+    <book id="3">
+        <title>XML for Beginners</title>
+        <author>Emily Johnson</author>
+        <publisher>Beginner Books</publisher>
+        <year>2020</year>
+        <genre>Technology</genre>
+        <price>19.99</price>
+        <description>
+            A beginner's guide to understanding and using XML.
+        </description>
+    </book>
+    <book id="4">
+        <title>XML and Web Services</title>
+        <author>Michael Brown</author>
+        <publisher>Web Tech Publishers</publisher>
+        <year>2019</year>
+        <genre>Technology</genre>
+        <price>34.99</price>
+        <description>
+            Learn how to use XML in web services and applications.
+        </description>
+    </book>
+    <book id="5">
+        <title>Mastering XML</title>
+        <author>David Wilson</author>
+        <publisher>Expert Books</publisher>
+        <year>2023</year>
+        <genre>Technology</genre>
+        <price>49.99</price>
+        <description>
+            A comprehensive guide to mastering XML for advanced users.
+        </description>
+    </book>
+    <book id="6">
+        <title>XML and Databases</title>
+        <author>Linda White</author>
+        <publisher>Database Press</publisher>
+        <year>2018</year>
+        <genre>Technology</genre>
+        <price>24.99</price>
+        <description>
+            Explore the use of XML in database systems and applications.
+        </description>
+    </book>
+    <book id="7">
+        <title>XML in Practice</title>
+        <author>Robert Green</author>
+        <publisher>Practical Guides</publisher>
+        <year>2021</year>
+        <genre>Technology</genre>
+        <price>29.99</price>
+        <description>
+            Practical examples and case studies for using XML in real-world scenarios.
+        </description>
+    </book>
+    <book id="8">
+        <title>XML and Java</title>
+        <author>Patricia Brown</author>
+        <publisher>Java Press</publisher>
+        <year>2020</year>
+        <genre>Technology</genre>
+        <price>39.99</price>
+        <description>
+            Learn how to integrate XML with Java applications.
+        </description>
+    </book>
+    <book id="9">
+        <title>XML and .NET</title>
+        <author>Steven Clark</author>
+        <publisher>DotNet Press</publisher>
+        <year>2022</year>
+        <genre>Technology</genre>
+        <price>44.99</price>
+        <description>
+            Discover how to use XML with .NET technologies.
+        </description>
+    </book>
+    <book id="10">
+        <title>XML Security</title>
+        <author>Angela Martin</author>
+        <publisher>Security Books</publisher>
+        <year>2021</year>
+        <genre>Technology</genre>
+        <price>34.99</price>
+        <description>
+            A guide to securing XML data and applications.
+        </description>
+    </book>
+</library>

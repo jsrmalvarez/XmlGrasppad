@@ -232,12 +232,14 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
+            <TreeView x:Name="XmlTreeView" Grid.Column="0"/>
             <GridSplitter Grid.Column="1"
               HorizontalAlignment="Center"
               VerticalAlignment="Stretch"
               ShowsPreview="True"
               Width="5"
               />
+            <TextBox x:Name="XmlContentView" Grid.Column="2" AcceptsReturn="True" FontFamily="Consolas" />
         </Grid>
 
         <GridSplitter Grid.Row="4"

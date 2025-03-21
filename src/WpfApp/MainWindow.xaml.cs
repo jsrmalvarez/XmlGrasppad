@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using XmlNotepad.Utilities;
 
 namespace XmlNotepad
@@ -48,10 +49,48 @@ namespace XmlNotepad
             this.LocationChanged += OnWindowLocationChanged;
 
             this.recentFiles.RecentFileSelected += OnRecentFileSelected;
+            this.recentFiles.RecentFilesChanged += OnRecentFilesChanged;
             this.recentFilesCombo = new RecentFilesComboBox(this.recentFiles, this.ComboBoxAddress);
 
             this.RestoreSettings();
             this.initialized = true;
+        }
+        
+        // Handle changes to the recent files list
+        private void OnRecentFilesChanged(object sender, EventArgs e)
+        {
+            // Update the Recent Files menu with the new list
+            UpdateRecentFilesMenu();
+
+            // Save the list to settings
+            this.settings["RecentFiles"] = this.recentFiles.GetFiles();
+        }
+        
+        // Update the Recent Files menu with the current list of files
+        private void UpdateRecentFilesMenu()
+        {
+            RecentFilesMenu.Items.Clear();
+            
+            Uri[] files = this.recentFiles.GetFiles();
+            if (files != null && files.Length > 0)
+            {
+                foreach (Uri uri in files)
+                {
+                    System.Windows.Controls.MenuItem item = new System.Windows.Controls.MenuItem();
+                    item.Header = System.IO.Path.GetFileName(uri.LocalPath);
+                    item.ToolTip = uri.LocalPath;
+                    item.Click += (s, e) => LoadFile(uri.LocalPath);
+                    RecentFilesMenu.Items.Add(item);
+                }
+            }
+            else
+            {
+                // Add a disabled item if there are no recent files
+                System.Windows.Controls.MenuItem item = new System.Windows.Controls.MenuItem();
+                item.Header = "No recent files";
+                item.IsEnabled = false;
+                RecentFilesMenu.Items.Add(item);
+            }
         }
 
         private void RestoreSettings()
@@ -246,9 +285,119 @@ namespace XmlNotepad
 
         private void LoadFile(string path)
         {
-            var model = (XmlCache)GetService(typeof(XmlCache));
-            model.Load(path);
+            try
+            {
+                var model = (XmlCache)GetService(typeof(XmlCache));
+                model.Load(path);
+                
+                // Update the UI with the loaded XML content
+                if (model.Document != null)
+                {
+                    // Display XML in the tree view
+                    PopulateTreeView(model.Document);
+                    
+                    // Show raw XML in the text view
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        model.Document.Save(sw);
+                        XmlContentView.Text = sw.ToString();
+                    }
+                    
+                    // Add to recent files
+                    this.recentFiles.Add(path);
+                    
+                    // Update window title
+                    this.Title = $"XML Notepad - {Path.GetFileName(path)}";
+                    
+                    // Show status message
+                    StatusMessage.Content = $"Loaded: {path}";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading XML file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+        
+        private void PopulateTreeView(System.Xml.XmlDocument document)
+        {
+            XmlTreeView.Items.Clear();
+            
+            // Create root item
+            TreeViewItem rootItem = CreateTreeViewItem(document.DocumentElement);
+            if (rootItem != null)
+            {
+                XmlTreeView.Items.Add(rootItem);
+                rootItem.IsExpanded = true;
+            }
+        }
+        
+        private TreeViewItem CreateTreeViewItem(System.Xml.XmlNode node)
+        {
+            if (node == null) return null;
+            
+            TreeViewItem item = new TreeViewItem();
+            item.Tag = node;
+            
+            // Configure the item based on node type
+            switch (node.NodeType)
+            {
+                case System.Xml.XmlNodeType.Element:
+                    // Element with no attributes
+                    if (node.Attributes.Count == 0 && !node.HasChildNodes)
+                    {
+                        item.Header = $"<{node.Name}/>";
+                    }
+                    // Element with attributes or children
+                    else
+                    {
+                        item.Header = $"<{node.Name}>";
+                        
+                        // Add attributes as children
+                        foreach (System.Xml.XmlAttribute attr in node.Attributes)
+                        {
+                            TreeViewItem attrItem = new TreeViewItem();
+                            attrItem.Header = $"{attr.Name}=\"{attr.Value}\"";
+                            attrItem.Tag = attr;
+                            item.Items.Add(attrItem);
+                        }
+                        
+                        // Add child nodes
+                        foreach (System.Xml.XmlNode childNode in node.ChildNodes)
+                        {
+                            TreeViewItem childItem = CreateTreeViewItem(childNode);
+                            if (childItem != null)
+                            {
+                                item.Items.Add(childItem);
+                            }
+                        }
+                    }
+                    break;
+                    
+                case System.Xml.XmlNodeType.Text:
+                    item.Header = node.Value;
+                    break;
+                    
+                case System.Xml.XmlNodeType.CDATA:
+                    item.Header = $"<![CDATA[{node.Value}]]>";
+                    break;
+                    
+                case System.Xml.XmlNodeType.Comment:
+                    item.Header = $"<!--{node.Value}-->";
+                    break;
+                    
+                case System.Xml.XmlNodeType.ProcessingInstruction:
+                    item.Header = $"<?{node.Name} {node.Value}?>";
+                    break;
+                    
+                default:
+                    item.Header = node.OuterXml;
+                    break;
+            }
+            
+            return item;
+        }
+
         private void OnRecentFileSelected(object sender, MostRecentlyUsedEventArgs args)
         {
             if (args.Selection != null)
