@@ -4,7 +4,10 @@ using ModernWpf.Controls;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Resources;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using XmlNotepad.Utilities;
@@ -18,7 +21,6 @@ namespace XmlNotepad
     {
         UndoManager undoManager = new UndoManager(1000);
         Settings settings;
-        AppAnalytics analytics;
         Updater updater;
         DelayedActions delayedActions;
         XmlCache model;
@@ -27,6 +29,7 @@ namespace XmlNotepad
         RecentFiles recentFiles = new RecentFiles();
         RecentFilesComboBox recentFilesCombo;
         bool initialized;
+        ResourceManager resourceManager = new ResourceManager("XmlNotepad.Resources", typeof(MainWindow).Assembly);
 
         public MainWindow()
         {
@@ -54,6 +57,8 @@ namespace XmlNotepad
 
             this.RestoreSettings();
             this.initialized = true;
+
+            ApplyLocalization();
         }
         
         // Handle changes to the recent files list
@@ -406,5 +411,20 @@ namespace XmlNotepad
             }
         }
 
+        private void ApplyLocalization()
+        {
+            // Update UI elements with localized strings
+            this.Title = resourceManager.GetString("AppTitle");
+            MenuFile.Header = resourceManager.GetString("MenuFile");
+            MenuExit.Header = resourceManager.GetString("MenuExit");
+            // ...update other UI elements...
+        }
+
+        private void OnLanguageChanged(object sender, RoutedEventArgs e)
+        {
+            var selectedLanguage = ((MenuItem)sender).Tag.ToString();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguage);
+            ApplyLocalization();
+        }
     }
 }

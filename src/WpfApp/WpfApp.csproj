@@ -5,6 +5,7 @@
     <TargetFramework>net9.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -25,7 +26,9 @@
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup> 
     <Resource Include="Resources\xmlnote.ico" />
+    <EmbeddedResource Include="Resources.resx" />
+    <EmbeddedResource Include="Resources.fr.resx" />
   </ItemGroup>
 </Project>

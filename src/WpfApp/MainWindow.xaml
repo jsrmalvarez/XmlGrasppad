@@ -19,7 +19,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
-            <MenuItem Header="File">
+            <MenuItem Header="File" x:Name="MenuFile">
                 <MenuItem Header="New" InputGestureText="Ctrl+N"/>
                 <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
                 <MenuItem Header="Reload" InputGestureText="F5"/>
@@ -27,7 +27,7 @@
                 <MenuItem Header="Save As..."/>
                 <MenuItem Header="Export Errors..."/>
                 <MenuItem Header="Recent Files" x:Name="RecentFilesMenu"/>
-                <MenuItem Header="Exit" InputGestureText="Alt+F4" Command="local:Commands.Exit"/>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4" Command="local:Commands.Exit" x:Name="MenuExit"/>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Undo" InputGestureText="Ctrl+Z"/>
@@ -125,6 +125,11 @@
                 <MenuItem Header="About XML Grasppad..."/>
             </MenuItem>
             <MenuItem HorizontalAlignment="Right" Header="Update"></MenuItem>
+            <MenuItem Header="Language">
+                <MenuItem Header="English" Tag="en-US" Click="OnLanguageChanged" />
+                <MenuItem Header="French" Tag="fr-FR" Click="OnLanguageChanged" />
+                <!-- Add more languages as needed -->
+            </MenuItem>
         </Menu>
         <ui:CommandBar Grid.Row="1" HorizontalAlignment="Left">
             <ui:AppBarButton x:Name="NewButton" ToolTip="New">
