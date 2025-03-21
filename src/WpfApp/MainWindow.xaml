@@ -20,27 +20,27 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="File" x:Name="MenuFile">
-                <MenuItem Header="New" InputGestureText="Ctrl+N"/>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
-                <MenuItem Header="Reload" InputGestureText="F5"/>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S"/>
-                <MenuItem Header="Save As..."/>
-                <MenuItem Header="Export Errors..."/>
+                <MenuItem Header="New" InputGestureText="Ctrl+N" x:Name="MenuNew"/>
+                <MenuItem Header="Open" InputGestureText="Ctrl+O" x:Name="MenuOpen"/>
+                <MenuItem Header="Reload" InputGestureText="F5" x:Name="MenuReload"/>
+                <MenuItem Header="Save" InputGestureText="Ctrl+S" x:Name="MenuSave"/>
+                <MenuItem Header="Save As..." x:Name="MenuSaveAs"/>
+                <MenuItem Header="Export Errors..." x:Name="MenuExportErrors"/>
                 <MenuItem Header="Recent Files" x:Name="RecentFilesMenu"/>
                 <MenuItem Header="Exit" InputGestureText="Alt+F4" Command="local:Commands.Exit" x:Name="MenuExit"/>
             </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z"/>
-                <MenuItem Header="Redo" InputGestureText="Ctrl+Y"/>
+            <MenuItem Header="Edit" x:Name="MenuEdit">
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" x:Name="MenuUndo"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" x:Name="MenuRedo"/>
                 <Separator/>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X"/>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C"/>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V"/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" x:Name="MenuCut"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" x:Name="MenuCopy"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" x:Name="MenuPaste"/>
                 <Separator/>
-                <MenuItem Header="Delete" InputGestureText="Del"/>
-                <MenuItem Header="Insert" InputGestureText="Ins"/>
-                <MenuItem Header="Rename" InputGestureText="Enter"/>
-                <MenuItem Header="Duplicate" InputGestureText="Ctrl+D"/>
+                <MenuItem Header="Delete" InputGestureText="Del" x:Name="MenuDelete"/>
+                <MenuItem Header="Insert" InputGestureText="Ins" x:Name="MenuInsert"/>
+                <MenuItem Header="Rename" InputGestureText="Enter" x:Name="MenuRename"/>
+                <MenuItem Header="Duplicate" InputGestureText="Ctrl+D" x:Name="MenuDuplicate"/>
                 <MenuItem Header="Change To">
                     <MenuItem Header="Element"/>
                     <MenuItem Header="Attribute"/>
@@ -59,13 +59,13 @@
                     <MenuItem Header="Right"/>
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="Find" InputGestureText="Ctrl+F"/>
-                <MenuItem Header="Replace" InputGestureText="Ctrl+H"/>
+                <MenuItem Header="Find" InputGestureText="Ctrl+F" x:Name="MenuFind"/>
+                <MenuItem Header="Replace" InputGestureText="Ctrl+H" x:Name="MenuReplace"/>
                 <MenuItem Header="Incremental Search" InputGestureText="Ctrl+I"/>
             </MenuItem>
-            <MenuItem Header="View">
-                <MenuItem Header="Expand All"/>
-                <MenuItem Header="Collapse All"/>
+            <MenuItem Header="View" x:Name="MenuView">
+                <MenuItem Header="Expand All" x:Name="MenuExpandAll"/>
+                <MenuItem Header="Collapse All" x:Name="MenuCollapseAll"/>
                 <Separator/>
                 <MenuItem Header="Status Bar"/>
                 <Separator/>
@@ -79,52 +79,52 @@
                 <Separator/>
                 <MenuItem Header="Compare XML Files..."/>
             </MenuItem>
-            <MenuItem Header="Insert">
-                <MenuItem Header="Element">
+            <MenuItem Header="Insert" x:Name="MenuInsertHeader">
+                <MenuItem Header="Element" x:Name="MenuInsertElement">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child" InputGestureText="Ctrl+Ins"/>
                 </MenuItem>
-                <MenuItem Header="Attribute">
+                <MenuItem Header="Attribute" x:Name="MenuInsertAttribute">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child" InputGestureText="Alt+Ins"/>
                 </MenuItem>
-                <MenuItem Header="Text">
+                <MenuItem Header="Text" x:Name="MenuInsertText">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child"/>
                 </MenuItem>
-                <MenuItem Header="Comment">
+                <MenuItem Header="Comment" x:Name="MenuInsertComment">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child"/>
                 </MenuItem>
-                <MenuItem Header="CDATA">
+                <MenuItem Header="CDATA" x:Name="MenuInsertCDATA">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child"/>
                 </MenuItem>
-                <MenuItem Header="Processing Instruction">
+                <MenuItem Header="Processing Instruction" x:Name="MenuInsertProcessingInstruction">
                     <MenuItem Header="Before"/>
                     <MenuItem Header="After"/>
                     <MenuItem Header="Child"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Window">
-                <MenuItem Header="Dark" Click="OnDarkTheme"/>
-                <MenuItem Header="Light" Click="OnLightTheme"/>
-                <MenuItem Header="New Window" Click="OnNewWindow"/>
+            <MenuItem Header="Window" x:Name="MenuWindow">
+                <MenuItem Header="Dark" Click="OnDarkTheme" x:Name="MenuDarkTheme"/>
+                <MenuItem Header="Light" Click="OnLightTheme" x:Name="MenuLightTheme"/>
+                <MenuItem Header="New Window" Click="OnNewWindow" x:Name="MenuNewWindow"/>
             </MenuItem>
-            <MenuItem Header="Help">
+            <MenuItem Header="Help" x:Name="MenuHelp">
                 <MenuItem Header="Contents"/>
                 <MenuItem Header="Index"/>
                 <MenuItem Header="Open Sample..."/>
                 <MenuItem Header="Check for updates..."/>
                 <Separator/>
-                <MenuItem Header="About XML Grasppad..."/>
+                <MenuItem Header="About XML Grasppad..." x:Name="MenuAbout"/>
             </MenuItem>
-            <MenuItem HorizontalAlignment="Right" Header="Update"></MenuItem>
+            <MenuItem HorizontalAlignment="Right" Header="Update" x:Name="MenuUpdate"></MenuItem>
             <MenuItem Header="Language">
                 <MenuItem Header="English" Tag="en-US" Click="OnLanguageChanged" />
                 <MenuItem Header="French" Tag="fr-FR" Click="OnLanguageChanged" />
@@ -217,7 +217,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" Margin="5,2" >Location:</Label>
+            <Label VerticalAlignment="Center" Margin="5,2" x:Name="LabelLocation">Location:</Label>
             <ComboBox x:Name="ComboBoxAddress" Grid.Column="1" HorizontalAlignment="Stretch"
                      VerticalAlignment="Center" KeyDown="OnComboBoxAddress_KeyDown" 
                      ToolTip="Enter local file path or http address of file to load"

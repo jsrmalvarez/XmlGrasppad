@@ -417,7 +417,43 @@ namespace XmlNotepad
             this.Title = resourceManager.GetString("AppTitle");
             MenuFile.Header = resourceManager.GetString("MenuFile");
             MenuExit.Header = resourceManager.GetString("MenuExit");
-            // ...update other UI elements...
+            MenuNew.Header = resourceManager.GetString("MenuNew");
+            MenuOpen.Header = resourceManager.GetString("MenuOpen");
+            MenuReload.Header = resourceManager.GetString("MenuReload");
+            MenuSave.Header = resourceManager.GetString("MenuSave");
+            MenuSaveAs.Header = resourceManager.GetString("MenuSaveAs");
+            MenuExportErrors.Header = resourceManager.GetString("MenuExportErrors");
+            RecentFilesMenu.Header = resourceManager.GetString("MenuRecentFiles");
+            MenuEdit.Header = resourceManager.GetString("MenuEdit");
+            MenuUndo.Header = resourceManager.GetString("MenuUndo");
+            MenuRedo.Header = resourceManager.GetString("MenuRedo");
+            MenuCut.Header = resourceManager.GetString("MenuCut");
+            MenuCopy.Header = resourceManager.GetString("MenuCopy");
+            MenuPaste.Header = resourceManager.GetString("MenuPaste");
+            MenuDelete.Header = resourceManager.GetString("MenuDelete");
+            MenuInsert.Header = resourceManager.GetString("MenuInsert");
+            MenuRename.Header = resourceManager.GetString("MenuRename");
+            MenuDuplicate.Header = resourceManager.GetString("MenuDuplicate");
+            MenuFind.Header = resourceManager.GetString("MenuFind");
+            MenuReplace.Header = resourceManager.GetString("MenuReplace");
+            MenuView.Header = resourceManager.GetString("MenuView");
+            MenuExpandAll.Header = resourceManager.GetString("MenuExpandAll");
+            MenuCollapseAll.Header = resourceManager.GetString("MenuCollapseAll");
+            MenuHelp.Header = resourceManager.GetString("MenuHelp");
+            MenuAbout.Header = resourceManager.GetString("MenuAbout");
+            MenuInsertElement.Header = resourceManager.GetString("MenuInsertHeaderElement");
+            MenuInsertAttribute.Header = resourceManager.GetString("MenuInsertAttribute");
+            MenuInsertText.Header = resourceManager.GetString("MenuInsertText");
+            MenuInsertComment.Header = resourceManager.GetString("MenuInsertComment");
+            MenuInsertCDATA.Header = resourceManager.GetString("MenuInsertCDATA");
+            MenuInsertProcessingInstruction.Header = resourceManager.GetString("MenuInsertProcessingInstruction");
+            MenuWindow.Header = resourceManager.GetString("MenuWindow");
+            MenuDarkTheme.Header = resourceManager.GetString("MenuDarkTheme");
+            MenuLightTheme.Header = resourceManager.GetString("MenuLightTheme");
+            MenuNewWindow.Header = resourceManager.GetString("MenuNewWindow");
+            MenuUpdate.Header = resourceManager.GetString("MenuUpdate");
+            LabelLocation.Content = resourceManager.GetString("LabelLocation");
+            StatusMessage.Content = resourceManager.GetString("StatusBarDefault");
         }
 
         private void OnLanguageChanged(object sender, RoutedEventArgs e)

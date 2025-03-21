@@ -43,4 +43,115 @@
   <data name="MenuLanguage" xml:space="preserve">
     <value>Langue</value>
   </data>
+  <data name="MenuNew" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="MenuOpen" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="MenuReload" xml:space="preserve">
+    <value>Recharger</value>
+  </data>
+  <data name="MenuSave" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="MenuSaveAs" xml:space="preserve">
+    <value>Enregistrer sous...</value>
+  </data>
+  <data name="MenuExportErrors" xml:space="preserve">
+    <value>Exporter les erreurs...</value>
+  </data>
+  <data name="MenuRecentFiles" xml:space="preserve">
+    <value>Fichiers récents</value>
+  </data>
+  <data name="MenuEdit" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="MenuUndo" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="MenuRedo" xml:space="preserve">
+    <value>Rétablir</value>
+  </data>
+  <data name="MenuCut" xml:space="preserve">
+    <value>Couper</value>
+  </data>
+  <data name="MenuCopy" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="MenuPaste" xml:space="preserve">
+    <value>Coller</value>
+  </data>
+  <data name="MenuDelete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="MenuInsert" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="MenuRename" xml:space="preserve">
+    <value>Renommer</value>
+  </data>
+  <data name="MenuDuplicate" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="MenuFind" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="MenuReplace" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>Affichage</value>
+  </data>
+  <data name="MenuExpandAll" xml:space="preserve">
+    <value>Tout développer</value>
+  </data>
+  <data name="MenuCollapseAll" xml:space="preserve">
+    <value>Tout réduire</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>À propos de XML Grasppad...</value>
+  </data>
+  <data name="LabelLocation" xml:space="preserve">
+    <value>Emplacement :</value>
+  </data>
+  <data name="StatusBarDefault" xml:space="preserve">
+    <value>Ceci est un test</value>
+  </data>
+  <data name="MenuInsertElement" xml:space="preserve">
+    <value>Élément</value>
+  </data>
+  <data name="MenuInsertAttribute" xml:space="preserve">
+    <value>Attribut</value>
+  </data>
+  <data name="MenuInsertText" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="MenuInsertComment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="MenuInsertCDATA" xml:space="preserve">
+    <value>CDATA</value>
+  </data>
+  <data name="MenuInsertProcessingInstruction" xml:space="preserve">
+    <value>Instruction de traitement</value>
+  </data>
+  <data name="MenuWindow" xml:space="preserve">
+    <value>Fenêtre</value>
+  </data>
+  <data name="MenuDarkTheme" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="MenuLightTheme" xml:space="preserve">
+    <value>Clair</value>
+  </data>
+  <data name="MenuNewWindow" xml:space="preserve">
+    <value>Nouvelle fenêtre</value>
+  </data>
+  <data name="MenuUpdate" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
 </root>
