@@ -128,7 +128,8 @@
             <MenuItem Header="Language">
                 <MenuItem Header="English" Tag="en-US" Click="OnLanguageChanged" />
                 <MenuItem Header="French" Tag="fr-FR" Click="OnLanguageChanged" />
-                <!-- Add more languages as needed -->
+                <MenuItem Header="Esperanto" Tag="eo" Click="OnLanguageChanged" />
+                <MenuItem Header="Spanish" Tag="es" Click="OnLanguageChanged" />
             </MenuItem>
         </Menu>
         <ui:CommandBar Grid.Row="1" HorizontalAlignment="Left">

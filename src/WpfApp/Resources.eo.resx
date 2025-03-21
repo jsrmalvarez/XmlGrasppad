@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>XML Grasppad</value>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>Dosiero</value>
+  </data>
+  <data name="MenuExit" xml:space="preserve">
+    <value>Eliri</value>
+  </data>
+  <data name="MenuLanguage" xml:space="preserve">
+    <value>Lingvo</value>
+  </data>
+  <data name="MenuNew" xml:space="preserve">
+    <value>Nova</value>
+  </data>
+  <data name="MenuOpen" xml:space="preserve">
+    <value>Malfermi</value>
+  </data>
+  <data name="MenuReload" xml:space="preserve">
+    <value>Reŝargi</value>
+  </data>
+  <data name="MenuSave" xml:space="preserve">
+    <value>Konservi</value>
+  </data>
+  <data name="MenuSaveAs" xml:space="preserve">
+    <value>Konservi kiel...</value>
+  </data>
+  <data name="MenuExportErrors" xml:space="preserve">
+    <value>Eksporti Erarojn...</value>
+  </data>
+  <data name="MenuRecentFiles" xml:space="preserve">
+    <value>Lastaj Dosieroj</value>
+  </data>
+  <data name="MenuEdit" xml:space="preserve">
+    <value>Redakti</value>
+  </data>
+  <data name="MenuUndo" xml:space="preserve">
+    <value>Malfari</value>
+  </data>
+  <data name="MenuRedo" xml:space="preserve">
+    <value>Refari</value>
+  </data>
+  <data name="MenuCut" xml:space="preserve">
+    <value>Eltondi</value>
+  </data>
+  <data name="MenuCopy" xml:space="preserve">
+    <value>Kopii</value>
+  </data>
+  <data name="MenuPaste" xml:space="preserve">
+    <value>Alglui</value>
+  </data>
+  <data name="MenuDelete" xml:space="preserve">
+    <value>Forigi</value>
+  </data>
+  <data name="MenuInsert" xml:space="preserve">
+    <value>Enmeti</value>
+  </data>
+  <data name="MenuRename" xml:space="preserve">
+    <value>Renomi</value>
+  </data>
+  <data name="MenuDuplicate" xml:space="preserve">
+    <value>Duobligi</value>
+  </data>
+  <data name="MenuFind" xml:space="preserve">
+    <value>Serĉi</value>
+  </data>
+  <data name="MenuReplace" xml:space="preserve">
+    <value>Anstataŭigi</value>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>Vido</value>
+  </data>
+  <data name="MenuExpandAll" xml:space="preserve">
+    <value>Etendi Ĉion</value>
+  </data>
+  <data name="MenuCollapseAll" xml:space="preserve">
+    <value>Kunfaldi Ĉion</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>Helpo</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>Pri XML Grasppad...</value>
+  </data>
+  <data name="LabelLocation" xml:space="preserve">
+    <value>Loko:</value>
+  </data>
+  <data name="StatusBarDefault" xml:space="preserve">
+    <value>Ĉi tio estas testo</value>
+  </data>
+  <data name="MenuInsertElement" xml:space="preserve">
+    <value>Elemento</value>
+  </data>
+  <data name="MenuInsertAttribute" xml:space="preserve">
+    <value>Atributo</value>
+  </data>
+  <data name="MenuInsertText" xml:space="preserve">
+    <value>Teksto</value>
+  </data>
+  <data name="MenuInsertComment" xml:space="preserve">
+    <value>Komento</value>
+  </data>
+  <data name="MenuInsertCDATA" xml:space="preserve">
+    <value>CDATA</value>
+  </data>
+  <data name="MenuInsertProcessingInstruction" xml:space="preserve">
+    <value>Prilabora Instrukcio</value>
+  </data>
+  <data name="MenuWindow" xml:space="preserve">
+    <value>Fenestro</value>
+  </data>
+  <data name="MenuDarkTheme" xml:space="preserve">
+    <value>Malhela</value>
+  </data>
+  <data name="MenuLightTheme" xml:space="preserve">
+    <value>Helkolora</value>
+  </data>
+  <data name="MenuNewWindow" xml:space="preserve">
+    <value>Nova Fenestro</value>
+  </data>
+  <data name="MenuUpdate" xml:space="preserve">
+    <value>Ĝisdatigi</value>
+  </data>
+</root>

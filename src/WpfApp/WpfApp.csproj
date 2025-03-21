@@ -30,5 +30,7 @@
     <Resource Include="Resources\xmlnote.ico" />
     <EmbeddedResource Include="Resources.resx" />
     <EmbeddedResource Include="Resources.fr.resx" />
+    <EmbeddedResource Include="Resources.es.resx" />
+    <EmbeddedResource Include="Resources.eo.resx" />
   </ItemGroup>
 </Project>
