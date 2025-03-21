@@ -8,6 +8,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using XmlNotepad.Utilities;
+using System.Linq; // Ensure this is included for LINQ methods
 
 namespace XmlNotepad
 {
@@ -459,6 +460,38 @@ namespace XmlNotepad
                     XmlContentView.Focus();
                     XmlContentView.Select(startIndex, nodeXml.Length);
                 });
+            }
+        }
+
+        private void OnSearchBoxTextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = SearchBox.Text.Trim();
+            FilterTreeView(XmlTreeView.Items, searchText);
+        }
+
+        private void OnClearSearchClick(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Text = string.Empty;
+        }
+
+        private void FilterTreeView(ItemCollection items, string searchText)
+        {
+            foreach (TreeViewItem item in items.OfType<TreeViewItem>()) // Use OfType instead of Cast
+            {
+                if (item.Tag is System.Xml.XmlNode xmlNode)
+                {
+                    bool isVisible = string.IsNullOrEmpty(searchText) || xmlNode.OuterXml.Contains(searchText, StringComparison.OrdinalIgnoreCase);
+                    item.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
+
+                    // Recursively filter child nodes
+                    FilterTreeView(item.Items, searchText);
+
+                    // If any child is visible, make the parent visible
+                    if (item.Items.OfType<TreeViewItem>().Any(child => child.Visibility == Visibility.Visible))
+                    {
+                        item.Visibility = Visibility.Visible;
+                    }
+                }
             }
         }
     }
