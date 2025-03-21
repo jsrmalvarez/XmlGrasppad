@@ -229,17 +229,20 @@
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="XmlTreeView" Grid.Column="0"/>
-            <GridSplitter Grid.Column="1"
-              HorizontalAlignment="Center"
-              VerticalAlignment="Stretch"
-              ShowsPreview="True"
-              Width="5"
-              />
-            <TextBox x:Name="XmlContentView" Grid.Column="2" AcceptsReturn="True" FontFamily="Consolas" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5" Grid.Row="0" Grid.Column="0">
+                <Button Content="Expand All" Click="OnExpandAllClick" Margin="0,0,5,0"/>
+                <Button Content="Collapse All" Click="OnCollapseAllClick"/>
+            </StackPanel>
+            <TreeView x:Name="XmlTreeView" Grid.Row="1" Grid.Column="0"/>
+            <GridSplitter Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="5"/>
+            <TextBox x:Name="XmlContentView" Grid.Row="1" Grid.Column="2" AcceptsReturn="True" FontFamily="Consolas" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
         </Grid>
 
         <GridSplitter Grid.Row="4"

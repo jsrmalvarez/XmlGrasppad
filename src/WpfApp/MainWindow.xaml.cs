@@ -300,7 +300,7 @@ namespace XmlNotepad
                     using (StringWriter sw = new StringWriter())
                     {
                         model.Document.Save(sw);
-                        XmlContentView.Text = sw.ToString();
+                        XmlContentView.Text = sw.ToString(); // Correctly reference XmlContentView
                     }
                     
                     // Add to recent files
@@ -406,5 +406,38 @@ namespace XmlNotepad
             }
         }
 
+        private void OnExpandAllClick(object sender, RoutedEventArgs e)
+        {
+            foreach (TreeViewItem item in XmlTreeView.Items)
+            {
+                ExpandAllNodes(item);
+            }
+        }
+
+        private void OnCollapseAllClick(object sender, RoutedEventArgs e)
+        {
+            foreach (TreeViewItem item in XmlTreeView.Items)
+            {
+                CollapseAllNodes(item);
+            }
+        }
+
+        private void ExpandAllNodes(TreeViewItem item)
+        {
+            item.IsExpanded = true;
+            foreach (TreeViewItem child in item.Items)
+            {
+                ExpandAllNodes(child);
+            }
+        }
+
+        private void CollapseAllNodes(TreeViewItem item)
+        {
+            item.IsExpanded = false;
+            foreach (TreeViewItem child in item.Items)
+            {
+                CollapseAllNodes(child);
+            }
+        }
     }
 }
