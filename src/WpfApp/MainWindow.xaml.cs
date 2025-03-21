@@ -307,7 +307,7 @@ namespace XmlNotepad
                     this.recentFiles.Add(path);
                     
                     // Update window title
-                    this.Title = $"XML Notepad - {Path.GetFileName(path)}";
+                    this.Title = $"XML Grasppad - {Path.GetFileName(path)}";
                     
                     // Show status message
                     StatusMessage.Content = $"Loaded: {path}";

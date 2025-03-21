@@ -257,7 +257,7 @@ namespace XmlNotepad
         private DelayedActions _delayedActions = null;
         private PersistentFileNames _pfn;
         private bool _isDirty;
-        public static string DefaultUpdateLocation = "https://lovettsoftwarestorage.blob.core.windows.net/downloads/XmlNotepad/Updates.xml";
+        public static string DefaultUpdateLocation = "https://lovettsoftwarestorage.blob.core.windows.net/downloads/XmlGrasppad/Updates.xml";
 
         /// <summary>
         /// This event is raised when a particular setting has been changed.

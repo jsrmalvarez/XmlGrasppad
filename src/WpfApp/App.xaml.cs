@@ -44,7 +44,7 @@ namespace XmlNotepad
             get
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                return System.IO.Path.Combine(path, "Microsoft", "Xml Notepad", "XmlNotepad.settings");
+                return System.IO.Path.Combine(path, "Microsoft", "Xml Grasppad", "XmlGrasppad.settings");
             }
         }
 
@@ -53,7 +53,7 @@ namespace XmlNotepad
             get
             {
                 string path = Path.GetDirectoryName(this.GetType().Assembly.Location);
-                return System.IO.Path.Combine(path, "XmlNotepad.settings");
+                return System.IO.Path.Combine(path, "XmlGrasppad.settings");
             }
         }
 
@@ -169,7 +169,7 @@ namespace XmlNotepad
             this._settings["XmlDiffIgnoreXmlDecl"] = false;
             this._settings["XmlDiffIgnoreDtd"] = false;
 
-            bool allowAnalytics = (Environment.GetEnvironmentVariable("XML_NOTEPAD_DISABLE_ANALYTICS") != "1");
+            bool allowAnalytics = (Environment.GetEnvironmentVariable("XML_GRASPPAD_DISABLE_ANALYTICS") != "1");
             this._settings["AllowAnalytics"] = allowAnalytics;
             this._settings["AnalyticsClientId"] = "";
 

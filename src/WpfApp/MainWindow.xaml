@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:XmlNotepad"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="XML Notepad" Height="800" Width="1280" Icon="/Resources/xmlnote.ico">
+        Title="XML Grasppad" Height="800" Width="1280" Icon="/Resources/xmlnote.ico">
     <Window.CommandBindings>
         <CommandBinding Command="local:Commands.Exit" Executed="OnExit"/>
     </Window.CommandBindings>
@@ -122,7 +122,7 @@
                 <MenuItem Header="Open Sample..."/>
                 <MenuItem Header="Check for updates..."/>
                 <Separator/>
-                <MenuItem Header="About XML Notepad..."/>
+                <MenuItem Header="About XML Grasppad..."/>
             </MenuItem>
             <MenuItem HorizontalAlignment="Right" Header="Update"></MenuItem>
         </Menu>
