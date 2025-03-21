@@ -232,7 +232,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="XmlTreeView" Grid.Column="0"/>
+            <TreeView x:Name="XmlTreeView" Grid.Column="0" SelectedItemChanged="OnTreeViewSelectedItemChanged"/>
             <GridSplitter Grid.Column="1"
               HorizontalAlignment="Center"
               VerticalAlignment="Stretch"

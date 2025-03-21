@@ -406,5 +406,39 @@ namespace XmlNotepad
             }
         }
 
+        private void OnTreeViewSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (e.NewValue is TreeViewItem selectedItem && selectedItem.Tag is System.Xml.XmlNode xmlNode)
+            {
+                HighlightXmlNode(xmlNode);
+            }
+        }
+
+        private void HighlightXmlNode(System.Xml.XmlNode xmlNode)
+        {
+            if (xmlNode == null || XmlContentView.Text == null) return;
+
+            // Get the XML string of the node
+            string nodeXml = xmlNode.OuterXml;
+
+            // Find the position of the node's XML in the TextBox
+            int startIndex = XmlContentView.Text.IndexOf(nodeXml, StringComparison.Ordinal);
+            if (startIndex >= 0)
+            {
+                // Select the text
+                XmlContentView.Select(startIndex, nodeXml.Length);
+
+                // Scroll to the line containing the selected text
+                int lineIndex = XmlContentView.GetLineIndexFromCharacterIndex(startIndex);
+                XmlContentView.ScrollToLine(lineIndex);
+
+                // Force the TextBox to refresh its selection visually
+                XmlContentView.Dispatcher.InvokeAsync(() =>
+                {
+                    XmlContentView.Focus();
+                    XmlContentView.Select(startIndex, nodeXml.Length);
+                });
+            }
+        }
     }
 }
