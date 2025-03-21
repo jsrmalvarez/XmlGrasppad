@@ -13,6 +13,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="1*"/>
@@ -212,12 +213,11 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" Margin="5,2" >Location:</Label>
+            <Label VerticalAlignment="Center" Margin="5,2">Location:</Label>
             <ComboBox x:Name="ComboBoxAddress" Grid.Column="1" HorizontalAlignment="Stretch"
-                     VerticalAlignment="Center" KeyDown="OnComboBoxAddress_KeyDown" 
-                     ToolTip="Enter local file path or http address of file to load"
-                     IsEditable="True"
-                     />
+                      VerticalAlignment="Center" KeyDown="OnComboBoxAddress_KeyDown"
+                      ToolTip="Enter local file path or http address of file to load"
+                      IsEditable="True"/>
             <ui:CommandBar Grid.Column="2">
                 <ui:AppBarButton>
                     <ui:AppBarButton.Icon>
@@ -227,6 +227,16 @@
             </ui:CommandBar>
         </Grid>
         <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SearchBox" Grid.Column="0" Margin="5" VerticalAlignment="Center"
+                     ToolTip="Search nodes in the tree view" TextChanged="OnSearchBoxTextChanged"/>
+            <Button Content="Clear" Grid.Column="1" Margin="5" VerticalAlignment="Center"
+                    Click="OnClearSearchClick"/>
+        </Grid>
+        <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="Auto" />
@@ -242,14 +252,14 @@
             <TextBox x:Name="XmlContentView" Grid.Column="2" AcceptsReturn="True" FontFamily="Consolas" />
         </Grid>
 
-        <GridSplitter Grid.Row="4"
+        <GridSplitter Grid.Row="5"
               VerticalAlignment="Center"
               HorizontalAlignment="Stretch"
               ShowsPreview="True"
               Height="5"
               />
 
-        <DataGrid x:Name="TaskList" Grid.Row="5">
+        <DataGrid x:Name="TaskList" Grid.Row="6">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Description" Width="2*"/>
@@ -259,7 +269,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <StatusBar Grid.Row="6">
+        <StatusBar Grid.Row="7">
             <StatusBarItem x:Name="StatusMessage">This is a test</StatusBarItem>
         </StatusBar>
     </Grid>
