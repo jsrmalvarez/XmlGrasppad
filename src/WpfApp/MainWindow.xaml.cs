@@ -434,7 +434,7 @@ namespace XmlNotepad
                     break;
 
                 // Check if this occurrence matches the context of the node
-                if (IsMatchingNodeContext(XmlContentView.Text, index, nodeXml, xmlNode))
+                if (XmlNodeMatcher.IsMatchingNodeContext(XmlContentView.Text, index, nodeXml, xmlNode))
                 {
                     startIndex = index;
                     break;
@@ -460,14 +460,6 @@ namespace XmlNotepad
                     XmlContentView.Select(startIndex, nodeXml.Length);
                 });
             }
-        }
-
-        private bool IsMatchingNodeContext(string content, int index, string nodeXml, System.Xml.XmlNode xmlNode)
-        {
-            // Check the surrounding context of the node to ensure it matches
-            // For example, verify parent nodes, attributes, or sibling nodes if necessary
-            // This is a placeholder for more advanced context matching logic
-            return true;
         }
     }
 }
