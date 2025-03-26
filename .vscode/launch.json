@@ -2,22 +2,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": "Debug WPF App",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build-debug",
             "program": "${workspaceFolder}/src/WpfApp/bin/Debug/net9.0-windows/WpfApp.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/WpfApp",
             "stopAtEntry": false,
             "console": "internalConsole",
+            "justMyCode": true,
+            "requireExactSource": false,
+            "suppressJITOptimizations": true,
             "logging": {
-                "engineLogging": false,
-                "trace": false,
-                "programOutput": true
+                "moduleLoad": false
             },
-            "internalConsoleOptions": "openOnSessionStart",
-            "framework": "net9.0" // Update to match the installed framework version
+            "symbolOptions": {
+                "searchPaths": [],
+                "searchMicrosoftSymbolServer": false
+            }
         }
     ]
 }

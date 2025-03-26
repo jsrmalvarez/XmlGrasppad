@@ -13,6 +13,12 @@
     <ApplicationIcon>Resources\xmlnote.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\xmlnote.ico" />
   </ItemGroup>
