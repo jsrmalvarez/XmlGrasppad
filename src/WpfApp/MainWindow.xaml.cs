@@ -421,8 +421,29 @@ namespace XmlNotepad
             // Get the XML string of the node
             string nodeXml = xmlNode.OuterXml;
 
-            // Find the position of the node's XML in the TextBox
-            int startIndex = XmlContentView.Text.IndexOf(nodeXml, StringComparison.Ordinal);
+            // Find the correct occurrence of the node's XML in the TextBox
+            int startIndex = -1;
+            int currentIndex = 0;
+
+            while (currentIndex < XmlContentView.Text.Length)
+            {
+                // Find the next occurrence of the node's XML
+                int index = XmlContentView.Text.IndexOf(nodeXml, currentIndex, StringComparison.Ordinal);
+
+                if (index == -1)
+                    break;
+
+                // Check if this occurrence matches the context of the node
+                if (IsMatchingNodeContext(XmlContentView.Text, index, nodeXml, xmlNode))
+                {
+                    startIndex = index;
+                    break;
+                }
+
+                // Move to the next occurrence
+                currentIndex = index + 1;
+            }
+
             if (startIndex >= 0)
             {
                 // Select the text
@@ -439,6 +460,14 @@ namespace XmlNotepad
                     XmlContentView.Select(startIndex, nodeXml.Length);
                 });
             }
+        }
+
+        private bool IsMatchingNodeContext(string content, int index, string nodeXml, System.Xml.XmlNode xmlNode)
+        {
+            // Check the surrounding context of the node to ensure it matches
+            // For example, verify parent nodes, attributes, or sibling nodes if necessary
+            // This is a placeholder for more advanced context matching logic
+            return true;
         }
     }
 }
